@@ -22,7 +22,7 @@ const zodValidation =
       return next(
         new ErrorHandlerClass(
           msgs[0]?.message,
-          RESPONSE_MESSAGES.AUTH.CODES.BAD_REQUEST
+          RESPONSE_MESSAGES.CODES.BAD_REQUEST
         )
       );
     }

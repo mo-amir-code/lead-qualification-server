@@ -8,11 +8,11 @@ type OfferType = {
 
 type LeadType = {
   name: String;
-  role: string;
-  company: string;
-  industry: string;
-  location: string;
-  linkedin_bio: string;
+  role: string | null;
+  company: string | null;
+  industry: string | null;
+  location: string | null;
+  linkedin_bio: string | null;
   score: number | null;
   intent: IntentType | null;
   reasoning: string | null;

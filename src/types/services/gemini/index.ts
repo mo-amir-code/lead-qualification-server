@@ -1,5 +1,5 @@
-type CalculateLeadsType = {
+type CalculateLeadScoreWithAIType = {
   query: string;
 };
 
-export type { CalculateLeadsType };
+export type { CalculateLeadScoreWithAIType };
