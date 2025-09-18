@@ -12,6 +12,7 @@ import {
   handlePushLead,
   handleResetData,
   handleSetLeadsCalculationStatus,
+  isCalculating,
 } from "../utils/data/index.js";
 import { LeadType } from "../types/utils/data/index.js";
 import { handleToCalculateScoreOfLeads } from "../utils/controllers/leads/index.js";
@@ -66,6 +67,15 @@ const scoreLeads = apiHandler(async (req, res, next) => {
     return next(
       new ErrorHandlerClass(
         "Please first upload offer and csv file of leads",
+        RESPONSE_MESSAGES.CODES.BAD_REQUEST
+      )
+    );
+  }
+
+  if (isCalculating) {
+    return next(
+      new ErrorHandlerClass(
+        "Calculating leads score...",
         RESPONSE_MESSAGES.CODES.BAD_REQUEST
       )
     );
