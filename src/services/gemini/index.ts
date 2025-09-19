@@ -31,6 +31,7 @@ const url =
 const calculateLeadScoreWithAI = async ({
   query,
 }: CalculateLeadScoreWithAIType): Promise<CalculateScoreOfLeadsWithAIResponseType> => {
+  console.log("VARS: ", ENV_VARS)
   const response = await axios.post(
     url,
     {
