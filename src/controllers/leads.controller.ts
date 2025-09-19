@@ -58,7 +58,10 @@ const uploadLeads = apiHandler(async (req, res, next) => {
 
   return ok({
     res,
-    message: "CSV uploaded successfully",
+    message: `${currentLeads.length} leads uploaded successfully`,
+    data: {
+      count: currentLeads.length,
+    },
   });
 });
 
@@ -92,9 +95,12 @@ const scoreLeads = apiHandler(async (req, res, next) => {
 
 const getResults = apiHandler(async (req, res, next) => {
   return ok({
-    data: currentLeads,
+    data: {
+      leads: currentLeads,
+      isProcessing: isCalculating,
+    },
     res,
-    message: "results",
+    message: "result fetched",
   });
 });
 
