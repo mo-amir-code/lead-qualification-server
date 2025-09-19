@@ -194,7 +194,7 @@ curl http://localhost:8080/api/leads/results
 
 A quick walkthrough of the AI-Powered Lead Scoring Backend:
 
-[![Watch Demo Video](https://img.shields.io/badge/►-Watch%20Demo%20Video-blue?logo=youtube)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![Watch Demo Video](https://img.shields.io/badge/►-Watch%20Demo%20Video-blue?logo=youtube)](https://www.youtube.com/watch?v=N1l8Ex-sN6M)
 
 Click the banner above to view the full demo, covering setup, API usage, scoring pipeline, and live deployment on Railway.
 
