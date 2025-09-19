@@ -63,7 +63,7 @@ const calculateLeadScoreWithAI = async ({
   const result = aiResponse.candidates[0].content.parts[0].text;
 
   // Remove markdown-style JSON code fences to clean the output
-  const cleaned = result?.replace(/``````/g, "");
+  const cleaned = result?.replace(/```json\n?|\n```/g, "");
 
   // Parse the cleaned JSON string into an object - fallback to empty object if empty
   const output = JSON.parse(cleaned || "{}");

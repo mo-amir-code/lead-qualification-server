@@ -107,18 +107,17 @@ curl -X POST http://localhost:8080/api/offer \
 
 **Endpoint:** `POST /api/leads/upload`
 
-```bash
+**CSV Format:**```bash
 curl -X POST http://localhost:8080/api/leads/upload \
-  -F "file=@leads.csv"
-```
+ -F "file=@leads.csv"
 
-**CSV Format:**
+````
 
 ```csv
 name,role,company,industry,location,linkedin_bio
 Ava Patel,Head of Growth,FlowMetrics,SaaS,San Francisco,"Growth leader scaling B2B SaaS companies"
 John Smith,Software Engineer,TechCorp,Technology,New York,"Full-stack developer with 5 years experience"
-```
+````
 
 **Response:**
 
@@ -195,7 +194,7 @@ curl http://localhost:8080/api/leads/results
 
 A quick walkthrough of the AI-Powered Lead Scoring Backend:
 
-[![Watch Demo Video](https://img.shields.io/badge/►-Watch%20Demo%20Video-blue?logo=youtube)](https://www.loom.com/share/your-demo-video-id)
+[![Watch Demo Video](https://img.shields.io/badge/►-Watch%20Demo%20Video-blue?logo=youtube)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
 Click the banner above to view the full demo, covering setup, API usage, scoring pipeline, and live deployment on Railway.
 
