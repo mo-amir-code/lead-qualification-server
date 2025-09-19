@@ -38,31 +38,34 @@ const uploadLeads = apiHandler(async (req, res, next) => {
     }
     const stream = Readable.from(req.file.buffer.toString());
 
-    stream.pipe(csvParser()).on("data", (row) => {
-      const lead: LeadType = {
-        name: row.name,
-        role: row?.role || null,
-        company: row?.company || null,
-        industry: row?.industry || null,
-        location: row?.location || null,
-        linkedin_bio: row?.linkedin_bio || null,
-        score: null,
-        intent: null,
-        reasoning: null,
-      };
-      handlePushLead(lead);
-    });
+    stream
+      .pipe(csvParser())
+      .on("data", (row) => {
+        const lead: LeadType = {
+          name: row.name,
+          role: row?.role || null,
+          company: row?.company || null,
+          industry: row?.industry || null,
+          location: row?.location || null,
+          linkedin_bio: row?.linkedin_bio || null,
+          score: null,
+          intent: null,
+          reasoning: null,
+        };
+        handlePushLead(lead);
+      })
+      .on("end", () => {
+        return ok({
+          res,
+          message: `${currentLeads.length} leads uploaded successfully`,
+          data: {
+            count: currentLeads.length,
+          },
+        });
+      });
   } catch (err) {
     next(err);
   }
-
-  return ok({
-    res,
-    message: `${currentLeads.length} leads uploaded successfully`,
-    data: {
-      count: currentLeads.length,
-    },
-  });
 });
 
 const scoreLeads = apiHandler(async (req, res, next) => {
